@@ -9,7 +9,6 @@ export async function GET(request: Request,{
 }) {
     const {id} = await params;
     const filteredStudents = students.filter((p)=>p.teacherId === id);
-
     return NextResponse.json(filteredStudents);
 }
 
