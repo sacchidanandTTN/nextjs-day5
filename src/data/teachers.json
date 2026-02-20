@@ -1,0 +1,7 @@
+[
+  { "id": "t1", "name": "John Smith", "subject": "Mathematics" },
+  { "id": "t2", "name": "Sarah Johnson", "subject": "Physics" },
+  { "id": "t3", "name": "Michael Brown", "subject": "Chemistry" },
+  { "id": "t4", "name": "Emily Davis", "subject": "Biology" },
+  { "id": "t5", "name": "David Wilson", "subject": "English" }
+]
