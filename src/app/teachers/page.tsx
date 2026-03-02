@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const BASE_URL ="http://localhost:3001/api/teachers" 
+const BASE_URL = "http://localhost:3000/api/teachers"
 async function getTeachers() {
   const res = await fetch(BASE_URL, {
     cache: "no-store",
@@ -13,7 +13,7 @@ async function getTeachers() {
 
 export default async function TeachersPage() {
   const teachers = await getTeachers();
-console.log(teachers)
+  console.log(teachers)
   return (
     <div style={{ padding: "20px" }}>
       <h1>Teachers</h1>

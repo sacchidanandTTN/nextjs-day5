@@ -7,8 +7,29 @@ export async function GET(request: Request,{
 }:{
     params : Promise<{id:string}>
 }) {
-    const {id} = await params;
-    const filteredStudents = students.filter((p)=>p.teacherId === id);
-    return NextResponse.json(filteredStudents);
+
+    try{
+        const {id} = await params;
+        if(!id){
+            return NextResponse.json({message:"Teacher Id is required"},
+                {status:400}
+            )
+        }
+
+        const filteredStudents = students.filter((p)=>p.teacherId === id);
+        if(filteredStudents.length === 0){
+            return NextResponse.json(
+                {message:"No student found for this teacher"},
+                {status:404}
+            )
+        }
+
+        return NextResponse.json(filteredStudents);
+    }catch(err){
+        return NextResponse.json(
+            {message:"Failed to fetch student for teachere"},
+            {status:500}
+        )
+    }
 }
 

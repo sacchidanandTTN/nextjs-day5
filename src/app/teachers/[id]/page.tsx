@@ -1,6 +1,6 @@
 async function getStudents(id: string) {
   const res = await fetch(
-    `http://localhost:3001/api/teachers/${id}/students`,
+    `http://localhost:3000/api/teachers/${id}/students`,
     { cache: "no-store" }
   );
 
